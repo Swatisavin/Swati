@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nomination Page</title>
+  <script>
+    function sendOTP() {
+      let email = document.getElementById("email").value;
+      let mobile = document.getElementById("mobile").value;
+      if (email && mobile) {
+        alert("OTP sent to your mobile!");
+      } else {
+        alert("Please enter both email and mobile number.");
+      }
+    }
+
+    function submitNomination() {
+      let email = document.getElementById("email").value;
+      let otp = document.getElementById("otp").value;
+      if (otp) {
+        localStorage.setItem("nominationEmail", email);
+        alert("Nomination submitted!");
+      } else {
+        alert("Please enter OTP to proceed.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Nomination Page</h1>
+  <form>
+    Email ID: <input type="email" id="email" required><br><br>
+    Mobile Number: <input type="text" id="mobile" required><br><br>
+    <button type="button" onclick="sendOTP()">Send OTP</button><br><br>
+    Enter OTP: <input type="text" id="otp" required><br><br>
+    <button type="button" onclick="submitNomination()">Submit Nomination</button>
+  </form>
+</body>
+</html>
+
